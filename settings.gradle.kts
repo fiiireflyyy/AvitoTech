@@ -21,3 +21,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "AvitoTech"
 include(":app")
+include(":features:feature-profile")
+include(":features:feature-auth")
+include(":features:feature-reading")
+include(":features:feature-books-list")
+include(":features:book-upload")

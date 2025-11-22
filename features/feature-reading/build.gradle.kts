@@ -1,21 +1,17 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "com.fenix.avitotech"
+    namespace = "com.fenix.feature_reading"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.fenix.avitotech"
         minSdk = 29
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -34,22 +30,13 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    buildFeatures {
-        compose = true
-    }
 }
 
 dependencies {
 
-
-    implementation(platform(libs.compose.bom))
-    implementation(libs.bundles.compose.base)
-    implementation(libs.play.services.auth)
-    implementation(libs.bundles.firebase)
-    debugImplementation(libs.compose.ui.tooling)
-    implementation(libs.navigation.compose)
-    implementation(libs.bundles.coroutines)
-    implementation(libs.dagger)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
